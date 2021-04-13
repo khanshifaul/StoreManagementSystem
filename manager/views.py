@@ -17,11 +17,13 @@ def stock(request):
 def customer(request):
     customers = Customer.objects.all()
     context = {'customers': customers}
-    return render(request, 'customer.html', context)
+    return render(request, 'customers.html', context)
 
 
 def invoice(request):
     customerform = CustomerForm(request.POST)
     productform = ProductForm(request.POST)
     context = {'customerform': customerform, 'productform': productform}
+    if request.method == 'POST':
+        print(request.POST)
     return render(request, 'invoice.html', context)

@@ -1,36 +1,22 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {%block title%}{%endblock title%}
-    <link rel="stylesheet" href="{% static 'css/manager_styles.css' %}" />
-    <link href="https://fonts.maateen.me/bangla/font.css" rel="stylesheet" />
-    <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
-  </head>
 
-  <body>
-    <header class="container">
-      <div class="branding">
-        <img
-          src="{% static 'img/logo.png'%}"
-          alt="logo"
-          width="90px"
-          height="90px"
-        />
-      </div>
-      <div class="brandinfo">
-        <h1><span>সিদরাতুল মেডিকেল স্টোর</span></h1>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {%block title%}{%endblock title%}
+  <link rel="stylesheet" href="{% static 'manager/css/manager_styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'manager/bootstrap/css/bootstrap.css' %}" />
+  <link href="https://fonts.maateen.me/bangla/font.css" rel="stylesheet" />
+  <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+</head>
 
-    {% block content %} {% endblock content%}
-    <footer class="container">
-      <div class="creator">
-        <p>design & developed by <span>Shifaul</span></p>
-      </div>
-    </footer>
-  </body>
+<body>
+  {% include 'header.html' %}
+  {% block content %} {% endblock content %}
+  {% include 'footer.html' %}
+</body>
+
 </html>

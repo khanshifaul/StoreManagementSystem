@@ -6,9 +6,16 @@
 
 {% block content%}
 <main>
-    <div class="dashboard-container">
-        <a href="{% url 'stock' %}">MY STOCK</a>
-        <a href="{% url 'customer' %}">CUSTOMER LIST</a>
+    <div class="container">
+        <div class="row">
+            <li class="span5">
+                <a href="{% url 'stock' %}">MY STOCK</a>
+            </li>
+            <li class="span5">
+                <a href="{% url 'customer' %}">CUSTOMER LIST</a>
+            </li>
+        </div>
+
     </div>
 </main>
 {% endblock content%}

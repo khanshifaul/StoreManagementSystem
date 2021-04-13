@@ -1,14 +1,61 @@
+{% extends "manager_base.html"%}
 
 {% block title %}
 <title>INVOICE : MY STORE</title>
 {% endblock title %}
 
-{% block content %}
-<div>
-    <form action="" method="POST">
-        {{customerform}}
-        {{productform}}
-        <input type="submit" value="Submit">
-    </form>
-</div>
-{% endblock content %}
+{% block content%}
+<main>
+    <div class="container">
+        <form action="" method="POST" id="add">
+            {% csrf_token %}
+            <div class="querybox">
+                {{ productform.as_ul }}
+            </div>
+            <div class="submit-btn">
+                <button type="submit" class="btn btn-add">
+                    <lord-icon src="https://cdn.lordicon.com//mecwbjnp.json" trigger="click"
+                        colors="primary:#08a88a,secondary:#ffffff" stroke="200" style="width:100px;height:100px">
+                    </lord-icon>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="preview">
+        <form action="">
+            {% csrf_token %}
+            {{ customerform.as_ul }}
+        </form>
+        <div>
+            <table>
+                <tr>
+                    <th>Sl No.</th>
+                    <th>Product Name</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ace</td>
+                    <td>80.00</td>
+                    <td>1</td>
+                    <td>80.00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="search">
+        <form action="">
+            <select name="selectSearch" id="">
+                <option value="CustomerName">Search by Customer Name</option>
+                <option value="CustomerPhoneNO">Search by Customer Phone No</option>
+                <option value="date">Search by Date</option>
+            </select>
+            <input type="search" name="" id="" placeholder="Type here...">
+        </form>
+    </div>
+</main>
+{%endblock content %}
