@@ -6,13 +6,11 @@
 
 {% block content%}
 <main>
-    <div class="container">
+    <div class="input-group">
         <form action="" method="POST" id="add">
             {% csrf_token %}
-            <div class="querybox">
-                {{ productform.as_ul }}
-            </div>
-            <div class="submit-btn">
+                {{ productform.as_p }}
+            <div class="btn">
                 <button type="submit" class="btn btn-add">
                     <lord-icon src="https://cdn.lordicon.com//mecwbjnp.json" trigger="click"
                         colors="primary:#08a88a,secondary:#ffffff" stroke="200" style="width:100px;height:100px">
@@ -22,13 +20,15 @@
         </form>
     </div>
 
-    <div class="preview">
-        <form action="">
-            {% csrf_token %}
-            {{ customerform.as_ul }}
-        </form>
+    <div>
+        <div class="input-group">
+            <form class="" action="">
+                {% csrf_token %}
+                {{ customerform.as_p }}
+            </form>
+        </div>
         <div>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Sl No.</th>
                     <th>Product Name</th>
@@ -43,7 +43,12 @@
                     <td>1</td>
                     <td>80.00</td>
                 </tr>
+                <tr>
+                    <th colspan="5" style="text-align: center;">+</th>
+                </tr>
             </table>
+            <a class="btn btn-secondary" href="{% url 'preview_pdf_invoice' %}">preview</a>
+            <a class="btn btn-primary" href="{% url 'download_pdf_invoice' %}">Download</a>
         </div>
     </div>
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Invoice_{{invoice_id}}.pdf
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'manager/bootstrap/css/bootstrap.css' %}" />
+    <style>
+        @page {
+            size: a6 portrait;
+            margin: 0.2cm;
+        }
+
+        *,
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 1px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h3>Sidratul Medical Store</h3>
+            <p>
+                <strong>Propritor: Mir Mosharof Hosen</strong><br>
+                <span>+8801714854118</span><br>
+                <span>+8801830581843</span><br>
+                <span>430 Merina Nodi-Bangla Complex, Bogura</span>
+            </p>
+        </div>
+        <hr>
+        <div>
+            <div class="row">
+                <p class="cols-2">Invoice No: {{invoice_id}}</p>
+                <p class="cols-2">Date: {{date}}</p>
+            </div>
+            <p>Name: {{customer}}</p>
+            <p>Phone No: {{customer_phone}}</p>
+            <p>Address: {{customer_address}}</p>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Sl No.</th>
+                    <th>Product Name</th>
+                    <th>Rate</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+                {% for i in items %}
+                <tr>
+                    <td>{{i.pk}}</td>
+                    <td>{{i.product}}</td>
+                    <td>{{i.cost}}</td>
+                    <td>{{i.qty}}</td>
+                    <td>{{i.total}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th colspan="4">Total:</th>
+                    <td>{{intotal}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
