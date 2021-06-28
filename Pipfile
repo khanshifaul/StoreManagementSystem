@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-django-xhtml2pdf = "*"
+Django = "*"
+xhtml2pdf = "*"
 
 [dev-packages]
 
