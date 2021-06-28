@@ -1,0 +1,150 @@
+// Large devices (Laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    color: var(--pure);
+    font-family: "Bangla", "Lato", sans-serif !important;
+    font-weight: bolder;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  header.container {
+    padding: 0.5rem;
+    color: var(--pure);
+    background-color: var(--primary);
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    .branding {
+      display: flex;
+      justify-content: center;
+      padding: 0 2.5rem;
+    }
+    .brandinfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        padding-top: 1rem;
+        font-size: 4rem;
+        line-height: 95%;
+      }
+    }
+  }
+  // MAIN
+
+  div.dashboard-container {
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    a {
+      background: var(--primary);
+      color: black;
+      margin: 5px;
+      padding: 5px;
+      text-decoration: none;
+    }
+  }
+
+  main {
+    // padding-top: 0.1rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+  }
+
+  div.add {
+    background-color: var(--ternary);
+    // padding: 0 1rem;
+    width: 25%;
+    min-height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form#add {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      div.querybox {
+        display: flex;
+        flex-flow: column;
+        width: 90%;
+        input {
+          padding: 0.5rem;
+          margin: 1rem 0;
+        }
+      }
+      div.submit-btn {
+        width: 10%;
+        transform: translateX(100%);
+      }
+    }
+  }
+  div.preview {
+    background-color: var(--light);
+    width: 50%;
+    min-height: 25rem;
+  }
+  div.search {
+    background-color: var(--ternary);
+    width: 25%;
+    min-height: 25rem;
+  }
+
+  // footer
+  footer.container {
+    padding: 1em;
+    background-color: var(--dark);
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    .contact {
+      display: flex;
+      justify-content: space-around;
+      .address {
+        min-width: 25em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .social img {
+          margin: 0 0.5em;
+          border-radius: 50%;
+        }
+      }
+      .form {
+        min-width: 25em;
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    .copyrights {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    cursor: pointer;
+    border: 0px outset transparent;
+    background-color: var(--primary);
+  }
+
+  .btn-add {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

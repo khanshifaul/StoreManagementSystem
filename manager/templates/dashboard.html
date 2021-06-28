@@ -1,0 +1,14 @@
+{% extends "manager_base.html"%}
+
+{%block title%}
+<title>DASHBOARD : MY STORE</title>
+{%endblock title%}
+
+{% block content%}
+<main>
+    <div class="dashboard-container">
+        <a href="{% url 'stock' %}">MY STOCK</a>
+        <a href="{% url 'customer' %}">CUSTOMER LIST</a>
+    </div>
+</main>
+{% endblock content%}
