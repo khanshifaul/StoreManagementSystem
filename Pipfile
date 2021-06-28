@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
-xhtml2pdf = "*"
+django-xhtml2pdf = "*"
 
 [dev-packages]
 
