@@ -1,6 +1,7 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+{% load bootstrap5 %}
 
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {%block title%}{%endblock title%}
   <link rel="stylesheet" href="{% static 'manager/css/manager_styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'manager/bootstrap/css/bootstrap.css' %}" />
-  <link rel="stylesheet" href="{% static 'manager/bootstrap/css/bootstrap-grid.css' %}" />
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
   <link href="https://fonts.maateen.me/bangla/font.css" rel="stylesheet" />
   <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
 </head>

@@ -1,4 +1,5 @@
 {% extends "manager_base.html"%}
+{% load bootstrap5 %}
 
 {% block title %}
 <title>INVOICE : MY STORE</title>
@@ -6,61 +7,56 @@
 
 {% block content%}
 <main>
-    <div class="input-group">
-        <form action="" method="POST" id="add">
-            {% csrf_token %}
-                {{ productform.as_p }}
-            <div class="btn">
-                <button type="submit" class="btn btn-add">
-                    <lord-icon src="https://cdn.lordicon.com//mecwbjnp.json" trigger="click"
-                        colors="primary:#08a88a,secondary:#ffffff" stroke="200" style="width:100px;height:100px">
+    <div class="container">
+        <div class="input-group">
+            <form action="" method="POST" id="add">
+                {% csrf_token %}
+                {% bootstrap_form productform %}
+                {% buttons %}
+                <button type="submit" class="btn btn-pill">
+                    <lord-icon src="https://cdn.lordicon.com//mecwbjnp.json" trigger="click" stroke="200"
+                        style="width:100px;height:100px">
                     </lord-icon>
                 </button>
-            </div>
-        </form>
-    </div>
-
-    <div>
-        <div class="input-group">
-            <form class="" action="">
-                {% csrf_token %}
-                {{ customerform.as_p }}
+                {% endbuttons %}
             </form>
         </div>
-        <div>
-            <table class="table">
-                <tr>
-                    <th>Sl No.</th>
-                    <th>Product Name</th>
-                    <th>Rate</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Ace</td>
-                    <td>80.00</td>
-                    <td>1</td>
-                    <td>80.00</td>
-                </tr>
-                <tr>
-                    <th colspan="5" style="text-align: center;">+</th>
-                </tr>
-            </table>
-            <a class="btn btn-secondary" href="{% url 'preview_pdf_invoice' %}">preview</a>
-            <a class="btn btn-primary" href="{% url 'download_pdf_invoice' %}">Download</a>
-        </div>
-    </div>
 
-    <div class="search">
-        <form action="">
-            <select name="selectSearch" id="">
-                <option value="CustomerName">Search by Customer Name</option>
-                <option value="CustomerPhoneNO">Search by Customer Phone No</option>
-                <option value="date">Search by Date</option>
-            </select>
-            <input type="search" name="" id="" placeholder="Type here...">
-        </form>
+        <div class="row">
+            <div class="input-group">
+                <form class="" action="">
+                    {% csrf_token %}
+                    {% bootstrap_form customerform %}
+                </form>
+            </div>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Sl No.</th>
+                        <th>Product Name</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Ace</td>
+                        <td>80.00</td>
+                        <td>1</td>
+                        <td>80.00</td>
+                    </tr>
+                    <tr>
+                        <th colspan="5" style="text-align: center;">+</th>
+                    </tr>
+                </table>
+                {% buttons %}
+                <a class="btn btn-secondary" href="{% url 'preview_pdf_invoice' %}">preview</a>
+                {% endbuttons %}
+                {% buttons %}
+                <a class="btn btn-primary" href="{% url 'download_pdf_invoice' %}">Download</a>
+                {% endbuttons %}
+            </div>
+        </div>
     </div>
 </main>
 {%endblock content %}
