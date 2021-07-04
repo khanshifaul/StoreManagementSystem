@@ -10,19 +10,19 @@ from xhtml2pdf import pisa
 
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'md_dashboard.html')
 
 
 def stock(request):
     products = Product.objects.all()
     context = {'products': products}
-    return render(request, 'stock.html', context)
+    return render(request, 'md_stock.html', context)
 
 
 def customer(request):
     customers = Customer.objects.all()
     context = {'customers': customers}
-    return render(request, 'customers.html', context)
+    return render(request, 'md_customers.html', context)
 
 
 def invoice(request):
@@ -31,11 +31,11 @@ def invoice(request):
     context = {'customerform': customerform, 'productform': productform}
     if request.method == 'POST':
         print(request.POST)
-    return render(request, 'invoice.html', context)
+    return render(request, 'md_invoice.html', context)
 
 
 def preview_pdf_invoice(request):
-    template_path = 'invoice_pdf.html'
+    template_path = 'md_invoice_pdf.html'
     invoice_id = Invoice.objects.get(pk=1)
     date = invoice_id.date_created
     customer = Customer.objects.get(pk='01701005355')
@@ -56,7 +56,7 @@ def preview_pdf_invoice(request):
 
 
 def download_pdf_invoice(request):
-    template_path = 'invoice_pdf.html'
+    template_path = 'md_invoice_pdf.html'
     invoice_id = Invoice.objects.get(pk=1)
     date = invoice_id.date_created
     customer = Customer.objects.get(pk='01701005355')
