@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+{% load bootstrap5 %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'hello_world/css/hello_world_styles.css' %}">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    {% include 'hw_header.html' %}
+    <main class="px-3 py-3">
+        {% block content %} {% endblock content %}
+    </main>
+    {% include 'hw_footer.html' %}
+</body>
+
+</html>

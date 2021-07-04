@@ -1,0 +1,30 @@
+{% extends 'hw_base.html' %}
+{% load static %}
+{% block title %}
+Welcome
+{% endblock title %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <img class="rounded mx-auto d-block bg-light"
+            src="{% static 'hello_world/img/page-is-under-construction.png' %}" width="150px"
+            alt="page-is-under-constraction">
+        <h2 class="display-5 fw-bold text-center">Our website is currently under Construction.</h2>
+        <p class="col-md-12 fs-5 text-center">We sincerely apologize for the inconvenience.
+            Please try again later.</p>
+    </div>
+</div>
+<div id="features" class="py-5">
+    {% include 'hw_features.html' %}
+</div>
+<div id="pricing" class="py-5">
+    {% include 'hw_pricing.html' %}
+</div>
+<div id="faqs" class="py-5">
+    {% include 'hw_faqs.html' %}
+</div>
+<div id="about" class="py-5">
+    {% include 'hw_about.html' %}
+</div>
+{% endblock content %}
