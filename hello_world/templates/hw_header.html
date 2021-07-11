@@ -20,8 +20,19 @@
                     <li><a href="#about" class="nav-link px-2 text-white">About</a></li>
                 </ul>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Register</button>
+                    <button type="button" class="btn btn-warning" name="Register">{% url 'register' %}"</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Login
+                    </button>
+
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,14 +5,29 @@ Welcome
 {% endblock title %}
 
 {% block content %}
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-        <img class="rounded mx-auto d-block bg-light"
-            src="{% static 'hello_world/img/page-is-under-construction.png' %}" width="150px"
-            alt="page-is-under-constraction">
-        <h2 class="display-5 fw-bold text-center">Our website is currently under Construction.</h2>
-        <p class="col-md-12 fs-5 text-center">We sincerely apologize for the inconvenience.
-            Please try again later.</p>
+<div id="carouselExampleCaptions" class="carousel slide container py-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'hello_world/img/carousel-1.jpg' %}" class="d-block w-100" height="540px" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'hello_world/img/carousel-2.jpg' %}" class="d-block w-100" height="540px" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'hello_world/img/carousel-3.jpg' %}" class="d-block w-100" height="540px" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div>
     </div>
 </div>
 <div id="features" class="py-5">

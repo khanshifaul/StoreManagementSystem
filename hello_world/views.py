@@ -1,5 +1,8 @@
-from django.shortcuts import render
-
+from django import forms
+from django.shortcuts import render, HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
+from .forms import UserRegisterForm
 # Create your views here.
 
 
@@ -24,12 +27,18 @@ def about(request):
 
 
 def register(request):
-    return render(request, 'hw_register.html')
+    form = UserRegisterForm()
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {'form': form}
+    return render(request, 'hw_register.html', context)
 
 
-def login(request):
-    return render(request, 'hw_login.html')
+def login_view(request):
+    login(request)
 
 
-def logout(request):
-    return render(request, 'logout.html')
+def logout_view(request):
+    logout(request)

@@ -10,7 +10,11 @@ from xhtml2pdf import pisa
 
 
 def dashboard(request):
-    return render(request, 'md_dashboard.html')
+    products = Product.objects.all()
+    customers = Customer.objects.all()
+    reports = Reports.objects.all()
+    context = {'products': products, 'customers': customers}
+    return render(request, 'md_dashboard.html', context)
 
 
 def stock(request):

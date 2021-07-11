@@ -13,12 +13,13 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'hello_world/css/hello_world_styles.css' %}">
+    <script src="https://kit.fontawesome.com/c3f28cff7e.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body class="d-flex flex-column h-100">
     {% include 'hw_header.html' %}
-    <main class="px-3 py-3">
+    <main class="px-3 py-4">
         {% block content %} {% endblock content %}
     </main>
     {% include 'hw_footer.html' %}
