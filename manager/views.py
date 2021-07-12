@@ -12,8 +12,12 @@ from xhtml2pdf import pisa
 def dashboard(request):
     products = Product.objects.all()
     customers = Customer.objects.all()
-    reports = Reports.objects.all()
-    context = {'products': products, 'customers': customers}
+    reports = Invoice.objects.all()
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'products': products,
+               'customers': customers, 'reports': reports,
+               'customerform': customerform, 'productform': productform}
     return render(request, 'md_dashboard.html', context)
 
 

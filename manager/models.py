@@ -8,7 +8,7 @@ from django.db.models.fields.related import ForeignKey, OneToOneField
 
 class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
-    phone = models.CharField(primary_key=True, max_length=11, validators=())
+    phone = models.CharField(max_length=11, validators=())
     address = models.CharField(max_length=100, null=True)
 
     def __str__(self):
@@ -50,8 +50,12 @@ class Invoice(models.Model):
     customer = models.ForeignKey(Customer, on_delete=CASCADE)
     valid = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True)
-    expiration_date = models.DateField(null=False)
-    status = models.CharField(max_length=10)
+    status_choices = [
+        ('PAID', 'Paid'),
+        ('UNPAID', 'Unpaid'),
+        ('DRAFT', 'Draft'),
+    ]
+    status = models.TextField(choices=status_choices, null=False)
 
     def __str__(self):
         return str(self.id)

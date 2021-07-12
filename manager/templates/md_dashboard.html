@@ -22,6 +22,35 @@ DASHBOARD
                     </button>
                 </div>
             </div>
+            <div class="row" data-masonry='{"percentPosition": true }''>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
         </div>
 
 
@@ -98,9 +127,9 @@ DASHBOARD
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Generic Name</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Total</th>
                             <th scope="col">Available</th>
                             <th scope="col"></th>
                         </tr>
@@ -109,9 +138,9 @@ DASHBOARD
                         {% for i in reports %}
                         <tr>
                             <td>{{ i.id }}</td>
-                            <td>{{ i.name }}</td>
-                            <td>{{ i.generic_name }}</td>
-                            <td>{{ i.price }}</td>
+                            <td>{{ i.customer }}</td>
+                            <td>{{ i.status }}</td>
+                            <td>{{ i.total }}</td>
                             <td>text</td>
                             <td><button>Edit</button></td>
                         </tr>

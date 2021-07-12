@@ -1,0 +1,38 @@
+{% load bootstrap5 %}
+
+{% block ordermodal%}
+<div id="createOrderModal" class="modal modal-backdrop modal-fullscreen">
+    <div class="modal-content container-fluid">
+        <div class="modal-header">
+            <button class="btn btn-close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-3 border-end">
+                    <form class="" action="">
+                        {% csrf_token %}
+                        {% bootstrap_form customerform %}
+
+                    </form>
+                </div>
+                <div class="col-3 border-end">
+                    <form action="" method="POST" id="add">
+                        {% csrf_token %}
+                        {% bootstrap_form productform %}
+                        {% buttons %}
+                        <button type="submit" class="w-100 btn btn-lg btn-primary">
+                            <lord-icon src="https://cdn.lordicon.com//mecwbjnp.json" trigger="click" stroke="200"
+                                style="width:100px;height:100px">
+                            </lord-icon>
+                        </button>
+                        {% endbuttons %}
+                    </form>
+                </div>
+                <div class="col-6 ">
+                    <p>Final</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

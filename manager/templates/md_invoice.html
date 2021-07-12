@@ -6,9 +6,9 @@ INVOICE
 {% endblock title %}
 
 {% block content%}
-<main>
-    <div class="container">
-        <div class="input-group">
+<div class="container-fluid">
+    <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="row">
             <form action="" method="POST" id="add">
                 {% csrf_token %}
                 {% bootstrap_form productform %}
@@ -20,15 +20,11 @@ INVOICE
                 </button>
                 {% endbuttons %}
             </form>
-        </div>
 
-        <div class="row">
-            <div class="input-group">
-                <form class="" action="">
-                    {% csrf_token %}
-                    {% bootstrap_form customerform %}
-                </form>
-            </div>
+            <form class="" action="">
+                {% csrf_token %}
+                {% bootstrap_form customerform %}
+            </form>
             <div>
                 <table class="table">
                     <tr>
@@ -58,5 +54,5 @@ INVOICE
             </div>
         </div>
     </div>
-</main>
+</div>
 {%endblock content %}
