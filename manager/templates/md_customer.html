@@ -1,0 +1,28 @@
+{% extends 'md_base.html' %}
+{% load bootstrap5 %}
+
+{% block content%}
+<div class="container-fluid">
+    <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div>Customer: {{customer.name}}</div>
+        <div>Customer Information</div>
+        <div>Total Order</div>
+        <div>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Date Ordered</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Product1</td>
+                    <td>Product1</td>
+                    <td>Product1</td>
+                    <td>Product1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content%}

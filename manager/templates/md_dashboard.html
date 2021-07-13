@@ -1,4 +1,5 @@
 {% extends 'md_base.html' %}
+{% load bootstrap5 %}
 
 {%block title%}
 DASHBOARD
@@ -103,12 +104,12 @@ DASHBOARD
                         </tr>
                     </thead>
                     <tbody>
-                        {% for i in customers %}
+                        {% for customer in customers %}
                         <tr>
-                            <td>{{ i.id }}</td>
-                            <td>{{ i.name }}</td>
-                            <td>{{ i.phone }}</td>
-                            <td>{{ i.address }}</td>
+                            <td>{{ customer.id }}</td>
+                            <td><a href="{% url 'customer' customer.id %}">{{ customer.name }}</a></td>
+                            <td>{{ customer.phone }}</td>
+                            <td>{{ customer.address }}</td>
                             <td><button>Edit</button></td>
                         </tr>
                         {% endfor %}

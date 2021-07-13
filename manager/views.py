@@ -31,10 +31,13 @@ def stock(request):
     return render(request, 'md_stock.html', context)
 
 
-def customer(request):
-    customers = Customer.objects.all()
-    context = {'customers': customers}
-    return render(request, 'md_customers.html', context)
+def customer(request, pk):
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    customer = Customer.objects.get(id=pk)
+    context = {'customer': customer,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_customer.html', context)
 
 
 def invoice(request):
