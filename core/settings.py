@@ -135,18 +135,10 @@ BOOTSTRAP5 = {
     # Note that a URL can be either a string,
     # e.g. "https://stackpath.bootstrapcdn.com/bootstrap/5.1.1/css/bootstrap.min.css",
     # or a dict like the default value below.
-    "css_url": {
-        "href": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
-        "integrity": "sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB",
-        "crossorigin": "anonymous",
-    },
+    "css_url": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
 
     # The complete URL to the Bootstrap JavaScript file
-    "javascript_url": {
-        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js",
-        "integrity": "sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T",
-        "crossorigin": "anonymous",
-    },
+    "javascript_url": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js",
 
     # The complete URL to the Bootstrap CSS file (None means no theme)
     "theme_url": None,

@@ -1,10 +1,12 @@
 from re import template
 
 from django.http import response
-from manager.forms import *
-from manager.models import *
 from django.shortcuts import render, HttpResponse
 from django.template.loader import get_template
+
+from manager.forms import *
+from manager.models import *
+
 from xhtml2pdf import pisa
 # Create your views here.
 
