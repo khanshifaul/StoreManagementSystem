@@ -136,14 +136,14 @@ BOOTSTRAP5 = {
     # e.g. "https://stackpath.bootstrapcdn.com/bootstrap/5.1.1/css/bootstrap.min.css",
     # or a dict like the default value below.
     "css_url": {
-        "href": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
+        "href": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
         "integrity": "sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB",
         "crossorigin": "anonymous",
     },
 
     # The complete URL to the Bootstrap JavaScript file
     "javascript_url": {
-        "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js",
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js",
         "integrity": "sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T",
         "crossorigin": "anonymous",
     },
@@ -152,7 +152,7 @@ BOOTSTRAP5 = {
     "theme_url": None,
 
     # Put JavaScript in the HEAD section of the HTML document (only relevant if you use bootstrap5.html)
-    'javascript_in_head': False,
+    'javascript_in_head': True,
 
     # Label class to use in horizontal forms
     'horizontal_label_class': 'col-md-3',

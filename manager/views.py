@@ -18,6 +18,8 @@ def dashboard(request):
     context = {'products': products,
                'customers': customers, 'reports': reports,
                'customerform': customerform, 'productform': productform}
+    if request.method == 'POST':
+        print(request.POST)
     return render(request, 'md_dashboard.html', context)
 
 
