@@ -1,0 +1,17 @@
+{% extends 'md_base.html' %}
+{% load bootstrap5 %}
+
+{% block title %}
+Products's List
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div>
+            <h5>Product's Name: {{product.name}}</h5>
+            <h6>Product's Generic Name: {{product.generic_name}}</h6>
+        </div>
+    </div>
+</div>
+{% endblock %}

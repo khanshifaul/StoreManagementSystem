@@ -1,6 +1,3 @@
-from re import template
-
-from django.http import response
 from django.shortcuts import render, HttpResponse
 from django.template.loader import get_template
 
@@ -12,9 +9,6 @@ from xhtml2pdf import pisa
 
 
 def dashboard(request):
-    products = Product.objects.all()
-    customers = Customer.objects.all()
-    reports = Invoice.objects.all()
     customerform = CustomerForm(request.POST)
     productform = ProductForm(request.POST)
     context = {'products': products,
@@ -25,10 +19,22 @@ def dashboard(request):
     return render(request, 'md_dashboard.html', context)
 
 
-def stock(request):
+def product(request, pk):
+    product = Product.objects.get(id=pk)
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'product': product,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_product.html', context)
+
+
+def products(request):
     products = Product.objects.all()
-    context = {'products': products}
-    return render(request, 'md_stock.html', context)
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'products': products,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_products.html', context)
 
 
 def customer(request, pk):
@@ -38,6 +44,33 @@ def customer(request, pk):
     context = {'customer': customer,
                'customerform': customerform, 'productform': productform}
     return render(request, 'md_customer.html', context)
+
+
+def customers(request):
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    customers = Customer.objects.all()
+    context = {'customers': customers,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_customers.html', context)
+
+
+def report(request, pk):
+    report = Product.objects.get(id=pk)
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'report': report,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_report.html', context)
+
+
+def reports(request):
+    reports = Invoice.objects.all()
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'reports': reports,
+               'customerform': customerform, 'productform': productform}
+    return render(request, 'md_reports.html', context)
 
 
 def invoice(request):

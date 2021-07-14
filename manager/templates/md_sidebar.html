@@ -12,20 +12,20 @@
                 <button id="createOrder" class="btn btn-outline-primary py-2 px-1 mx-3">Create An Order</button>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#products">
-                    <span data-feather="shopping-cart"></span>
+                <a class="nav-link" href="{% url 'products' %}">
+                    <span data-feather="products"></span>
                     Products
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#customers">
-                    <span data-feather="users"></span>
+                <a class="nav-link" href="{% url 'customers' %}">
+                    <span data-feather="customers"></span>
                     Customers
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#reports">
-                    <span data-feather="bar-chart-2"></span>
+                <a class="nav-link" href="{% url 'reports' %}">
+                    <span data-feather="reports"></span>
                     Reports
                 </a>
             </li>
