@@ -1,12 +1,22 @@
-{% load static %}
+{% extends 'hw_base.html' %}
 {% load bootstrap5 %}
 
-<h1>
-    register
-</h1>
+{% block title %}
+Register
+{% endblock title %}
 
-<form action="POST">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    <input type="button" value="Submit">
-</form>
+{% block content %}
+<div class="container">
+    <div class="row-cols-auto">
+        <h1 class="text-center border-bottom">
+            Register here
+        </h1>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
+        </form>
+    </div>
+</div>
+{% endblock %}

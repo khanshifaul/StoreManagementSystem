@@ -125,3 +125,12 @@ def download_pdf_invoice(request):
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
+
+
+def orderform(request):
+    customerform = CustomerForm(request.POST)
+    productform = ProductForm(request.POST)
+    context = {'customerform': customerform, 'productform': productform}
+    if request.method == 'POST':
+        print(request.POST)
+    return render(request, 'md_orderform.html', context)
