@@ -2,21 +2,41 @@
 {% load bootstrap5 %}
 
 {% block title %}
-Register
+Welcome! - GoSales.io
 {% endblock title %}
 
 {% block content %}
 <div class="container">
-    <div class="row-cols-auto">
-        <h1 class="text-center border-bottom">
-            Register here
-        </h1>
+    <div class="d-flex justify-content-center">
+        <div class="mt-5 col-5">
+            <div>
+                <h1 class="text-center border-bottom">
+                    Register here
+                </h1>
+            </div>
 
-        <form action="" method="POST">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            <input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
-        </form>
+            <div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% for field in form %}
+                    <div class="form-floating">
+                        <input type="{{ field.field.widget.input_type }}" id="id_{{ field.name }}" class="form-control"
+                            name="{{field.name}}" placeholder="{{field.name}}">
+                        <label for="id_{{ field.name }}">{{ field.label }}</label>
+                    </div>
+                    <!-- <div class="help-text">{{ field.help_text }} </div> -->
+                    {% endfor %}
+                    <input class="w-100 btn btn-lg btn-primary" type="submit" value="Register">
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -1,8 +1,6 @@
 import uuid
 from django.db import models
-from django.db.models.base import Model
-from django.db.models.deletion import CASCADE, PROTECT, SET_NULL
-from django.db.models.fields.related import ForeignKey, OneToOneField
+from django.db.models.deletion import CASCADE, SET_NULL
 # Create your models here.
 
 

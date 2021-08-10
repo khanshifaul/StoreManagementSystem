@@ -5,10 +5,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 
-class UserRegisterForm(UserCreationForm):
+class ManagerCreationForm(forms.Form):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        
+        fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
 
 
 class UserLoginForm():

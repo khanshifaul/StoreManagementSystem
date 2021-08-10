@@ -27,18 +27,13 @@ def about(request):
 
 
 def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Account has been created.')
+            return redirect('login')
     form = UserRegisterForm()
-    if request.user.is_authenticated:
-        return redirect('dashboard')
-    else:
-        if request.method == 'POST':
-            form = UserRegisterForm(request.POST)
-            if form.is_valid():
-                form.save()
-                user = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' + user)
-                return redirect('dashboard')
-
     context = {'form': form}
     return render(request, 'hw_register.html', context)
 
@@ -47,19 +42,19 @@ def login_view(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
     else:
+        form = UserLoginForm()
         if request.method == 'POST':
-            username = request.POST.get('username')
+            email = request.POST.get('email')
             password = request.POST.get('password')
-            user = authenticate(request, username=username, password=password)
+            user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('dashboard')
             else:
-                messages.info(request, 'username or password is incorrect')
+                messages.info(request, 'email or password is incorrect!')
                 return render(request, 'hw_login.html')
-
-    context = {}
-    return render(request, 'hw_login.html', context)
+        context = {'form': form}
+        return render(request, 'hw_login.html', context)
 
 
 def logout_view(request):
